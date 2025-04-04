@@ -1,0 +1,22 @@
+{
+    "1998-01-25": {
+        "temperature": 23.0,
+        "humidity": 75.0
+    },
+    "2004-11-23": {
+        "temperature": 25.0,
+        "humidity": 89.0
+    },
+    "2006-05-05": {
+        "temperature": 26.0,
+        "humidity": 78.0
+    },
+    "2008-10-11": {
+        "temperature": 22.0,
+        "humidity": 65.0
+    },
+    "2024-01-23": {
+        "temperature": 30.0,
+        "humidity": 69.0
+    }
+}
