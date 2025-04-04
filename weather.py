@@ -78,17 +78,31 @@ def main():
             print("Oops, date is in the future...") 
             continue 
  
-        temperature = float(input(" Enter temperature (°C): ")) 
-        humidity = float(input(" Enter Rel. Humidity (%): ")) 
-        if not (0 <= humidity <= 100): 
-            print("Oops, RH (%) must be between 0-100 only...") 
+        temperature = float(input(" Enter temperature (°C): "))
+        humidity = float(input(" Enter Rel. Humidity (%): "))
+        if not (0 <= humidity <= 100):
+            print("Oops, RH (%) must be between 0-100 only...")
+            continue
+        # add 3 more weather phenomenon here, such as UV index, etc.
+        
+        precipitation = float(input(" Enter precipitation (%): "))
+        
+        wind = float(input(" Enter wind speed (km/hr): ")) 
+        if not (0 <= wind <= 200): 
+            print("Oops, wind speed (km/h) must be between 0-200 only...") 
             continue 
+        
+        uv_index = float(input(" Enter UV Index: "))
+        if not (0 <= uv_index <= 11):
+            print("Oops, UV Index must be between 0-200 only...")             
         # add 3 more weather phenomenon here, such as UV index, etc. 
  
         records[date] = { 
-            "temperature": temperature, 
-            "humidity": humidity, 
-            # add the key-value pairs here... 
+            "temperature": temperature,
+            "humidity": humidity,
+            "precipitation" : precipitation,
+            "wind" : wind,
+            "uv_index": uv_index, 
         }
     
     print("\nSaving to file...")
@@ -100,15 +114,11 @@ def main():
         formatted_date = format_date(date)
         temperature = data["temperature"]
         humidity = data["humidity"]
-        # phenomenon3 = data["phenomenon3"]
-        # phenomenon4 = data["phenomenon4"]
-        # phenomenon5 = data["phenomenon5"]
+        precipitation = data["precipitation"]
+        wind = data["wind"]
+        uv_index = data["uv_index"]
 
-        print(f"{formatted_date}\t| {temperature:.1f}°C\t| {humidity:.1f}%")
-        # print(f" * {phenomenon3:,.1f} symbol | ...")
+        print(f"{formatted_date}\t| {precipitation:.1f}°C\t| {wind:.1f}%")
         
 if __name__ == "__main__":
     main()
-
-
-
